@@ -1,0 +1,101 @@
+@use 'variables';
+
+.contact {
+  text-align: center;
+  max-width: 100%;
+  margin: auto;
+  color: white;
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  width: 100%;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+input, textarea {
+    width: 50%;
+    padding: 10px;
+    border: 2px solid transparent; 
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+    background-clip: padding-box; 
+  }
+  
+  input:focus, textarea:focus {
+    outline: 2px solid #4e4376; 
+    border-color: #4e4376; 
+  }
+
+button {
+    width: 50%;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+button:hover {
+    background-position: 100% 0;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+button:focus {
+    outline: none;
+}
+
+.submit-btn{
+    background-image: linear-gradient(
+    to right,
+    #29323c,
+    #485563,
+    #2b5876,
+    #4e4376
+    );
+    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+}
+
+
+
+.success {
+  color: green;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  input, textarea {
+    width: 80%;
+  }
+
+  button {
+    width: 80%;
+  }
+  
+}
+
