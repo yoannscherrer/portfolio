@@ -23,7 +23,7 @@ function Navbar() {
         <li><button onClick={() => scrollToSection("portfolio")}>{t.projects}</button></li>
         <li><button onClick={() => scrollToSection("contact")}>{t.contact}</button></li>
       </ul>
-      <select className="lang-select" value={language} onChange={handleLanguageChange}>
+      <select className="lang-select" aria-label="Choisir une langue" value={language} onChange={handleLanguageChange}>
         <option value="fr">🇫🇷 Français</option>
         <option value="en">🇬🇧 English</option>
         <option value="de">🇩🇪 Deutsch</option>

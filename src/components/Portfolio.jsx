@@ -60,8 +60,9 @@ function Portfolio() {
         {projects.map((project, index) => (
           <SwiperSlide key={index}>
             <div className="project">
-              <a href={project.github} target="_blank" rel="noopener noreferrer">
-                <img src={project.image} alt={project.title} />
+              <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`Voir le projet ${project.title} sur GitHub`}>
+                <img src={project.image} alt={`Aperçu du projet ${project.title}`} />
+                <span className="visually-hidden">Voir le projet {project.title} sur GitHub</span>
               </a>
               <h3>{t.projets[project.key]}</h3>
             </div>
