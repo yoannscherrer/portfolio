@@ -10,7 +10,7 @@ function ContactForm() {
     message: "",
   });
 
-  const [successMessage, setSuccessMessage] = useState(""); // ✅ État pour afficher le message de succès
+  const [successMessage, setSuccessMessage] = useState(""); 
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -20,20 +20,20 @@ function ContactForm() {
     e.preventDefault();
 
     emailjs.send(
-      "service_gosu8z9", // Remplace par ton service ID
-      "template_67vod3w", // Remplace par ton template ID
+      "service_gosu8z9", 
+      "template_67vod3w", 
       {
         from_name: formData.name,
         to_name: "Yoann",
         from_email: formData.email,
         message: formData.message,
       },
-      "MviW8HQbe0bkxguC4" // Remplace par ta clé publique
+      "MviW8HQbe0bkxguC4" 
     )
     .then(() => {
       setSuccessMessage("Message envoyé avec succès !");
-      setTimeout(() => setSuccessMessage(""), 5000); // ✅ Cache le message après 5s
-      setFormData({ name: "", email: "", message: "" }); // ✅ Réinitialise le formulaire
+      setTimeout(() => setSuccessMessage(""), 5000); 
+      setFormData({ name: "", email: "", message: "" }); 
     })
     .catch((err) => console.error("Erreur :", err));
   };

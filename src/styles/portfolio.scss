@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 50px;
+    padding: 40px;
     max-width: 100%;
     margin: auto;
     background-color: gray;
@@ -23,7 +23,7 @@
     .swiper {
       width: 100%;
       max-width: 800px;
-      padding-bottom: 50px;
+      padding: 0px 35px 50px !important;
       overflow: hidden;
     }
 
@@ -74,5 +74,23 @@
         font-size: 1.5rem;
       }
     }
+  }
+
+  @media (max-width: 768px) {
+
+    .swiper-button-prev {
+      left: -4px !important; /* Écarte la flèche de gauche */
+    }
+  
+    .swiper-button-next {
+      right: -4px !important; /* Écarte la flèche de droite */
+    }
+  
+    .swiper-button-prev,
+    .swiper-button-next {
+      top: 35% !important; /* Ajustement vertical si besoin */
+      transform: scale(0.7) !important;
+    }
+  
   }
   
