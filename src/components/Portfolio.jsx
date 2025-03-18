@@ -64,7 +64,7 @@ function Portfolio() {
                 <img src={project.image} alt={`Aperçu du projet ${project.title}`} />
                 <span className="visually-hidden">Voir le projet {project.title} sur GitHub</span>
               </a>
-              <h3>{t.projets[project.key]}</h3>
+              <h1>{t.projets[project.key]}</h1>
             </div>
           </SwiperSlide>
         ))}
