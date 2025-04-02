@@ -26,7 +26,7 @@ const projects = [
   {
     key: "nina_carducci",
     image: projet3,
-    github: "https://github.com/yoannscherrer/yoannscherrer.github.io",
+    github: "https://github.com/yoannscherrer/projet-5",
   },
   {
     key: "kasa",
