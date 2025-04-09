@@ -10,35 +10,22 @@ import projet2 from "../assets/projet2.webp";
 import projet3 from "../assets/projet3.webp";
 import projet4 from "../assets/projet4.webp";
 import projet5 from "../assets/projet5.webp";
+import projectsData from "../projects.json";
 
+// Associer les images aux clés
+const imagesMap = {
+  booki: projet1,
+  sophie_bluel: projet2,
+  nina_carducci: projet3,
+  kasa: projet4,
+  mon_vieux_grimoire: projet5
+};
 
-const projects = [
-  {
-    key: "booki",
-    image: projet1,
-    github: "https://github.com/yoannscherrer/Projet-2",
-  },
-  {
-    key: "sophie_bluel",
-    image: projet2,
-    github: "https://github.com/yoannscherrer/Projet-3",
-  },
-  {
-    key: "nina_carducci",
-    image: projet3,
-    github: "https://github.com/yoannscherrer/projet-5",
-  },
-  {
-    key: "kasa",
-    image: projet4,
-    github: "https://github.com/yoannscherrer/kasa",
-  },
-  {
-    key: "mon_vieux_grimoire",
-    image: projet5,
-    github: "https://github.com/yoannscherrer/mon_vieux_grimoire_backend",
-  }
-];
+// Fusionner données JSON + image
+const projects = projectsData.map((project) => ({
+  ...project,
+  image: imagesMap[project.key]
+}));
 
 function Portfolio() {
   const { t } = useLanguage();
@@ -53,7 +40,7 @@ function Portfolio() {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        autoplay={{ delay: 3000 }}
+        autoplay={{ delay: 10000 }}
         loop={true}
         style={{ padding: "0 50px 50px 50px" }}
       >
@@ -62,9 +49,9 @@ function Portfolio() {
             <div className="project">
               <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`Voir le projet ${project.title} sur GitHub`}>
                 <img src={project.image} alt={`Aperçu du projet ${project.title}`} />
-                <span className="visually-hidden">Voir le projet {project.title} sur GitHub</span>
               </a>
               <h1>{t.projets[project.key]}</h1>
+              <p>{t.projets_description[project.key]}</p>
             </div>
           </SwiperSlide>
         ))}
@@ -74,4 +61,3 @@ function Portfolio() {
 }
 
 export default Portfolio;
-
